@@ -12,13 +12,18 @@ function App() {
         <NavBar>   
         </NavBar>
       </GridItem>
-      <GridItem area='aside' bg='gold'>Aside</GridItem>
-      <GridItem area='main' bg='dodgerblue'>
+
+      <GridItem area='aside'>
+        Aside
+      </GridItem>
+      
+      <GridItem area='main'>
         <GameGrid />
       </GridItem>
-    </Grid>
+       
+       </Grid>
 
-  )
+  );
 }
 
 export default App
