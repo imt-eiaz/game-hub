@@ -8,6 +8,15 @@ import {
 import { BsChevronDown } from "react-icons/bs";
 
 const SortSelector = () => {
+  const sortOrder = [
+    { value: "", label: "Relevance" },
+    { value: "-added", label: "Date added" },
+    { value: "name", label: "Name" },
+    { value: "-released", label: "Release date" },
+    { value: "-metacritic", label: "Popularity" },
+    { value: "-rating", label: "Average rating" },
+  ];
+
   return (
     <MenuRoot>
       <MenuTrigger asChild>
@@ -17,12 +26,11 @@ const SortSelector = () => {
         </Button>
       </MenuTrigger>
       <MenuContent>
-        <MenuItem value="rel">Relevance</MenuItem>
-        <MenuItem value="date add">Date added</MenuItem>
-        <MenuItem value="name">Name</MenuItem>
-        <MenuItem value="rel date">Release date</MenuItem>
-        <MenuItem value="pop">Popularity</MenuItem>
-        <MenuItem value="av rat">Average rating</MenuItem>
+        {sortOrder.map((order) => (
+          <MenuItem key={order.value} value={order.value}>
+            {order.label}
+          </MenuItem>
+        ))}
       </MenuContent>
     </MenuRoot>
   );

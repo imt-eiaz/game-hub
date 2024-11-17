@@ -23,7 +23,7 @@ function App() {
         lg: `"nav nav" "aside main"`,
       }}
       templateColumns={{
-        base: "1fr",
+        base: "100% 1fr",
         lg: "200px 1fr",
       }}
     >
@@ -31,7 +31,7 @@ function App() {
         <NavBar></NavBar>
       </GridItem>
 
-      <GridItem area="aside" paddingX={5}>
+      <GridItem area="aside" paddingX={2}>
         <GenreList
           selectedGenre={gameQuery.genre}
           onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
@@ -40,7 +40,7 @@ function App() {
 
       <GridItem area="main">
         <Box paddingLeft="10px"></Box>
-        <HStack spaceX={5} paddingLeft={2} marginBottom={5}>
+        <HStack spaceX={2} paddingLeft={2} marginBottom={5}>
           <PlatformSelector
             selectedPlatform={gameQuery.platform}
             onSelectPlatform={(platform) =>
