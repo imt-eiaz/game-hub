@@ -1,12 +1,23 @@
-import { Input } from "@chakra-ui/react";
 import { InputGroup } from "./ui/input-group";
+import { LuSearch } from "react-icons/lu";
+
+import { HStack, Input, Kbd } from "@chakra-ui/react";
+import { NativeSelectField, NativeSelectRoot } from "./ui/native-select";
 
 const SearchInput = () => {
   return (
-    <InputGroup>
-    <InputLeftElement children={}
-    <Input borderRadius={20} placeholder="Search games..." variant="subtle" />
-    </InputGroup>
+    <>
+      <HStack width="full" borderRadius={20}>
+        <InputGroup
+          flex="1"
+          startElement={<LuSearch />}
+          //endElement={<Kbd></Kbd>}
+        >
+          <Input placeholder="Search games..." />
+        </InputGroup>
+      </HStack>
+      <label> Themes </label>
+    </>
   );
 };
 
