@@ -4,7 +4,11 @@ import { LuSearch } from "react-icons/lu";
 import { HStack, Input } from "@chakra-ui/react";
 import { useRef } from "react";
 
-const SearchInput = () => {
+interface Props {
+  onSearch: (searchText: string) => void;
+}
+
+const SearchInput = ({ onSearch }: Props) => {
   const ref = useRef<HTMLInputElement>(null);
 
   return (
@@ -12,10 +16,10 @@ const SearchInput = () => {
       <form
         onSubmit={(event) => {
           event.preventDefault();
-          if (ref.current) console.log(ref.current.value);
+          if (ref.current) onSearch(ref.current.value);
         }}
       >
-        <HStack width="full" borderRadius={20}>
+        <HStack width="full" borderRadius={50}>
           <InputGroup
             flex="1"
             startElement={<LuSearch />}
